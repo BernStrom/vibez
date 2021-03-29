@@ -109,12 +109,14 @@
             <!-- Email -->
             <div class="mb-3">
               <label class="inline-block mb-2">Email</label>
-              <input
+              <vee-field
+                name="email"
                 type="email"
                 class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition
                   duration-500 focus:outline-none focus:border-black rounded"
                 placeholder="Enter Email"
               />
+              <ErrorMessage class="text-red-600" name="email" />
             </div>
             <!-- Age -->
             <div class="mb-3">
@@ -189,7 +191,7 @@ export default {
       tab: 'login',
       schema: {
         name: 'required|min:3|max:100|alpha_spaces',
-        email: '',
+        email: 'required|min:3|max:100|email',
         age: '',
         password: '',
         confirm_password: '',
