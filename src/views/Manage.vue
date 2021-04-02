@@ -2,7 +2,7 @@
   <section class="container mx-auto mt-6">
     <div class="md:grid md:grid-cols-3 md:gap-4">
       <div class="col-span-1">
-        <app-upload ref="upload" />
+        <app-upload ref="upload" :addSong="addSong" />
       </div>
       <div class="col-span-2">
         <div
@@ -22,6 +22,7 @@
               :song="song"
               :updateSong="updateSong"
               :index="i"
+              :removeSong="removeSong"
             />
           </div>
         </div>
@@ -50,19 +51,23 @@ export default {
     const snapshot = await songsCollection
       .where('uid', '==', auth.currentUser.uid)
       .get();
-    snapshot.forEach((document) => {
+    snapshot.forEach(this.addSong);
+  },
+  methods: {
+    updateSong(i, values) {
+      this.songs[i].modified_name = values.modified_name;
+      this.songs[i].genre = values.genre;
+    },
+    removeSong(i) {
+      this.songs.splice(i, 1);
+    },
+    addSong(document) {
       const song = {
         ...document.data(),
         docID: document.id,
       };
 
       this.songs.push(song);
-    });
-  },
-  methods: {
-    updateSong(i, values) {
-      this.songs[i].modified_name = values.modified_name;
-      this.songs[i].genre = values.genre;
     },
   },
 };
