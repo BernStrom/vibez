@@ -1,10 +1,12 @@
 <template>
   <app-header />
   <router-view></router-view>
+  <app-player />
   <auth-modal />
 </template>
 
 <script>
+import AppPlayer from '@/components/Player.vue';
 import AppHeader from './components/Header.vue';
 import AuthModal from './components/Auth.vue';
 
@@ -13,6 +15,7 @@ export default {
   components: {
     AppHeader,
     AuthModal,
+    AppPlayer,
   },
   created() {
     this.$store.dispatch('init_login');
