@@ -16,7 +16,13 @@
           </div>
           <div class="p-6">
             <!-- Composition Items -->
-            <composition-item v-for="song in songs" :key="song.docID" :song="song" />
+            <composition-item
+              v-for="(song, i) in songs"
+              :key="song.docID"
+              :song="song"
+              :updateSong="updateSong"
+              :index="i"
+            />
           </div>
         </div>
       </div>
@@ -41,7 +47,9 @@ export default {
     };
   },
   async created() {
-    const snapshot = await songsCollection.where('uid', '==', auth.currentUser.uid).get();
+    const snapshot = await songsCollection
+      .where('uid', '==', auth.currentUser.uid)
+      .get();
     snapshot.forEach((document) => {
       const song = {
         ...document.data(),
@@ -50,6 +58,12 @@ export default {
 
       this.songs.push(song);
     });
+  },
+  methods: {
+    updateSong(i, values) {
+      this.songs[i].modified_name = values.modified_name;
+      this.songs[i].genre = values.genre;
+    },
   },
 };
 </script>
