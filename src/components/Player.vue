@@ -27,7 +27,7 @@
         >
           <span class="song-title">{{ currentSong.modified_name }}</span>
           <span class="song-artist"
-            >(Uploaded by {{ currentSong.displayName }})</span
+            > (Uploaded by {{ currentSong.display_name }})</span
           >
         </div>
         <!-- Scrub Container  -->
