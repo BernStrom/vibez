@@ -13,6 +13,7 @@
           class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full
           focus:outline-none"
           @click.prevent="newSong(song)"
+          id="play-button"
         >
           <i class="fas fa-play"></i>
         </button>
