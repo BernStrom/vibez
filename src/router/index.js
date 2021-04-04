@@ -25,7 +25,6 @@ const routes = [
     },
     component: Manage,
     beforeEnter: (to, from, next) => {
-      console.log('Manage Route Guard');
       next();
     },
   },
