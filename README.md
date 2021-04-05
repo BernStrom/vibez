@@ -13,7 +13,7 @@
 
 ## :wave: Intros!
 
-👉&nbsp; **[Live Preview](https://vibez-six.vercel.app/ 'VIBEZ')**
+👉&nbsp; **[Live Preview](https://vibez-bernstrom.vercel.app/ 'VIBEZ')**
 
 Vibez is an music platform website with base features that are commonly seen in modern-day sharing platforms, such as users are able to either register for a new account or login to an existing one with uploading music files and comment features made available to only successfully-authenticated registered users.
 
