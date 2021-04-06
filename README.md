@@ -15,7 +15,7 @@
 
 👉&nbsp; **[Live Preview](https://vibez-bernstrom.vercel.app/ 'VIBEZ')**
 
-Vibez is an music platform website with base features that are commonly seen in modern-day sharing platforms, such as users are able to either register for a new account or login to an existing one with uploading music files and comment features made available to only successfully-authenticated registered users.
+Vibez is a music platform website with base features that are commonly seen in modern-day sharing platforms, such as users are able to either register for a new account or login to an existing one with uploading music files and comment features made available to only successfully-authenticated registered users.
 
 FYI: _**If you would like to try out the application but do not wish to manually sign up for an account, you can use the provided test account below.**_
 
@@ -45,6 +45,8 @@ With the core motivation of simply experimenting and getting an overall familiar
 - File uploading and editing through a 'Manage' section made available to verified logged-in users.
 - Commenting on any user uploaded music, made available to only verified logged-in users.
 - Built as a Progressive Web Application **(PWA)** that enhances overall user experience on both desktop and mobile devices.
+
+Note: **The site also contains a language localization feature (English - French). However, this feature is not fully implemented across the entire application as this was only meant to be experimental. To view this feature, simply click on the language button at the top right corner of the homepage and the main heading on the page will be converted. Localization was implemented with the Vue.js internationalization plugin, [Vue I18n](https://kazupon.github.io/vue-i18n/ "Vue I18n").**
 
 ## :memo: License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
