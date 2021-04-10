@@ -47,7 +47,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'LoginForm',
   data() {
@@ -89,6 +88,7 @@ export default {
   },
 };
 </script>
+
 <style>
 .eye--position {
   cursor: pointer;
@@ -100,4 +100,3 @@ export default {
   margin-left: -15px;
 }
 </style>
->
