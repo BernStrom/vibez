@@ -14,28 +14,32 @@
         name="email"
         type="email"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition
-                  duration-500 focus:outline-none focus:border-black rounded"
+          duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Enter Email"
       />
       <ErrorMessage class="text-red-600" name="email" />
     </div>
     <!-- Password -->
-    <div class="mb-3">
+    <div class="relative flex w-full flex-wrap items-stretch mb-3">
       <label class="inline-block mb-2">Password</label>
       <vee-field
         name="password"
-        type="password"
+        :type="isPasswordVisible ? 'text' : 'password'"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition
-                  duration-500 focus:outline-none focus:border-black rounded"
+          duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Password"
       />
+      <span class="eye--position object-left w-full">
+        <!-- eslint-disable-next-line -->
+        <i :class="isPasswordVisible ? 'fas fa-eye' : 'fas fa-eye-slash'" @click="setIsPasswordVisibility" />
+      </span>
       <ErrorMessage class="text-red-600" name="password" />
     </div>
     <button
       type="submit"
       :disabled="login_in_submission"
       class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition
-                hover:bg-purple-700"
+        hover:bg-purple-700"
     >
       Submit
     </button>
@@ -51,6 +55,7 @@ export default {
         email: 'required|email',
         password: 'required|min:6|max:32',
       },
+      isPasswordVisible: false,
       login_in_submission: false,
       login_show_alert: false,
       login_alert_variant: 'bg-blue-500',
@@ -58,6 +63,9 @@ export default {
     };
   },
   methods: {
+    setIsPasswordVisibility() {
+      this.isPasswordVisible = !this.isPasswordVisible;
+    },
     async login(values) {
       this.login_in_submission = true;
       this.login_show_alert = true;
@@ -80,3 +88,15 @@ export default {
   },
 };
 </script>
+
+<style>
+.eye--position {
+  cursor: pointer;
+  justify-content: flex-end;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  margin-top: 44px;
+  margin-left: -15px;
+}
+</style>
