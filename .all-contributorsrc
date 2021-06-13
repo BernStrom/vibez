@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "NedAckland",
+      "name": "Ned",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48385424?v=4",
+      "profile": "https://github.com/NedAckland",
+      "contributions": [
+        "design",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "vibez",
+  "projectOwner": "BernStrom",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
